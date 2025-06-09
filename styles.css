@@ -1,0 +1,27 @@
+/* styles.css */
+
+.my-suggestion-button.loading-state {
+  position: relative;
+  overflow: hidden; /* Hide overflow from spinner */
+  pointer-events: none; /* Make sure it's not clickable again */
+  color: transparent !important; /* Hide text, or set specific loading color */
+  background-color: #0073b1 !important; /* LinkedIn blue */
+}
+
+.my-suggestion-button.loading-state::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin: -8px 0 0 -8px; /* Center the spinner */
+  border: 2px solid #fff; /* White spinner */
+  border-top-color: transparent; /* Top part is transparent */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
